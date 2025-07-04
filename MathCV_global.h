@@ -1,0 +1,10 @@
+#ifndef MATHCV_GLOBAL_H
+#define MATHCV_GLOBAL_H
+
+#if defined(MATHCV_LIBRARY)
+#define MATHCV_EXPORT Q_DECL_EXPORT
+#else
+#define MATHCV_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // MATHCV_GLOBAL_H
