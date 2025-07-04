@@ -1,0 +1,8 @@
+/Testing
+/CMakeFiles
+/cmake
+/.vscode
+MathCVTests
+libMathCV.so
+*.cmake
+CMakeCache.txt
