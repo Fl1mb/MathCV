@@ -185,30 +185,17 @@ MathCV/fast:
 .PHONY : MathCV/fast
 
 #=============================================================================
-# Target rules for targets named MathCVTests
+# Target rules for targets named test_mathcv
 
 # Build rule for target.
-MathCVTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathCVTests
-.PHONY : MathCVTests
+test_mathcv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_mathcv
+.PHONY : test_mathcv
 
 # fast build rule for target.
-MathCVTests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCVTests.dir/build.make CMakeFiles/MathCVTests.dir/build
-.PHONY : MathCVTests/fast
-
-#=============================================================================
-# Target rules for targets named run_tests
-
-# Build rule for target.
-run_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests
-.PHONY : run_tests
-
-# fast build rule for target.
-run_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
-.PHONY : run_tests/fast
+test_mathcv/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/build
+.PHONY : test_mathcv/fast
 
 #=============================================================================
 # Target rules for targets named UnitTest++
@@ -236,32 +223,29 @@ TestUnitTest++/fast:
 	$(MAKE) $(MAKESILENT) -f unittest-cpp/CMakeFiles/TestUnitTest++.dir/build.make unittest-cpp/CMakeFiles/TestUnitTest++.dir/build
 .PHONY : TestUnitTest++/fast
 
-MathCVTests.o: MathCVTests.cpp.o
+MathCVTests.o: MathCVTests.cxx.o
 .PHONY : MathCVTests.o
 
 # target to build an object file
-MathCVTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/MathCVTests.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCVTests.dir/build.make CMakeFiles/MathCVTests.dir/MathCVTests.cpp.o
-.PHONY : MathCVTests.cpp.o
+MathCVTests.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/MathCVTests.cxx.o
+.PHONY : MathCVTests.cxx.o
 
-MathCVTests.i: MathCVTests.cpp.i
+MathCVTests.i: MathCVTests.cxx.i
 .PHONY : MathCVTests.i
 
 # target to preprocess a source file
-MathCVTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/MathCVTests.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCVTests.dir/build.make CMakeFiles/MathCVTests.dir/MathCVTests.cpp.i
-.PHONY : MathCVTests.cpp.i
+MathCVTests.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/MathCVTests.cxx.i
+.PHONY : MathCVTests.cxx.i
 
-MathCVTests.s: MathCVTests.cpp.s
+MathCVTests.s: MathCVTests.cxx.s
 .PHONY : MathCVTests.s
 
 # target to generate assembly for a file
-MathCVTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/MathCVTests.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCVTests.dir/build.make CMakeFiles/MathCVTests.dir/MathCVTests.cpp.s
-.PHONY : MathCVTests.cpp.s
+MathCVTests.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/MathCVTests.cxx.s
+.PHONY : MathCVTests.cxx.s
 
 mathcv.o: mathcv.cpp.o
 .PHONY : mathcv.o
@@ -335,6 +319,33 @@ src/LinearAlgebra/vector2d.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/src/LinearAlgebra/vector2d.cpp.s
 .PHONY : src/LinearAlgebra/vector2d.cpp.s
 
+test.o: test.cpp.o
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -348,11 +359,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... run_tests"
 	@echo "... MathCV"
-	@echo "... MathCVTests"
 	@echo "... TestUnitTest++"
 	@echo "... UnitTest++"
+	@echo "... test_mathcv"
 	@echo "... MathCVTests.o"
 	@echo "... MathCVTests.i"
 	@echo "... MathCVTests.s"
@@ -365,6 +375,9 @@ help:
 	@echo "... src/LinearAlgebra/vector2d.o"
 	@echo "... src/LinearAlgebra/vector2d.i"
 	@echo "... src/LinearAlgebra/vector2d.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

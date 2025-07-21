@@ -1,8 +1,2 @@
-#ifndef MATHCV_H_
-#define MATHCV_H_
+#include "mathcv.h"
 
-
-
-
-
-#endif MATHCV_H_

@@ -3,5 +3,21 @@
 
 #include "MathCV_global.h"
 
+#ifndef __cplusplus
+extern "C"{
+#endif
+    namespace MathCV{
+        
+
+
+
+
+
+
+
+    }
+#ifdef __cpluscplus
+}
+#endif
 
 #endif // MATHCV_H
