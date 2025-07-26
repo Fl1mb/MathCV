@@ -247,6 +247,54 @@ MathCVTests.cxx.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_mathcv.dir/build.make CMakeFiles/test_mathcv.dir/MathCVTests.cxx.s
 .PHONY : MathCVTests.cxx.s
 
+cuda/matrix_cuda.o: cuda/matrix_cuda.cu.o
+.PHONY : cuda/matrix_cuda.o
+
+# target to build an object file
+cuda/matrix_cuda.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/cuda/matrix_cuda.cu.o
+.PHONY : cuda/matrix_cuda.cu.o
+
+cuda/matrix_cuda.i: cuda/matrix_cuda.cu.i
+.PHONY : cuda/matrix_cuda.i
+
+# target to preprocess a source file
+cuda/matrix_cuda.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/cuda/matrix_cuda.cu.i
+.PHONY : cuda/matrix_cuda.cu.i
+
+cuda/matrix_cuda.s: cuda/matrix_cuda.cu.s
+.PHONY : cuda/matrix_cuda.s
+
+# target to generate assembly for a file
+cuda/matrix_cuda.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/cuda/matrix_cuda.cu.s
+.PHONY : cuda/matrix_cuda.cu.s
+
+cuda/matrix_operations.o: cuda/matrix_operations.cu.o
+.PHONY : cuda/matrix_operations.o
+
+# target to build an object file
+cuda/matrix_operations.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/cuda/matrix_operations.cu.o
+.PHONY : cuda/matrix_operations.cu.o
+
+cuda/matrix_operations.i: cuda/matrix_operations.cu.i
+.PHONY : cuda/matrix_operations.i
+
+# target to preprocess a source file
+cuda/matrix_operations.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/cuda/matrix_operations.cu.i
+.PHONY : cuda/matrix_operations.cu.i
+
+cuda/matrix_operations.s: cuda/matrix_operations.cu.s
+.PHONY : cuda/matrix_operations.s
+
+# target to generate assembly for a file
+cuda/matrix_operations.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MathCV.dir/build.make CMakeFiles/MathCV.dir/cuda/matrix_operations.cu.s
+.PHONY : cuda/matrix_operations.cu.s
+
 mathcv.o: mathcv.cpp.o
 .PHONY : mathcv.o
 
@@ -366,6 +414,12 @@ help:
 	@echo "... MathCVTests.o"
 	@echo "... MathCVTests.i"
 	@echo "... MathCVTests.s"
+	@echo "... cuda/matrix_cuda.o"
+	@echo "... cuda/matrix_cuda.i"
+	@echo "... cuda/matrix_cuda.s"
+	@echo "... cuda/matrix_operations.o"
+	@echo "... cuda/matrix_operations.i"
+	@echo "... cuda/matrix_operations.s"
 	@echo "... mathcv.o"
 	@echo "... mathcv.i"
 	@echo "... mathcv.s"

@@ -1,20 +1,28 @@
 cmake_minimum_required(VERSION 3.14)
-project(MathCV LANGUAGES CXX)
+project(MathCV LANGUAGES CXX CUDA)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(unittest-cpp)
-find_package(CUDA REQUIRED)
+
+option(USE_CUDA "Enable CUDA support" On)
+if(USE_CUDA)
+    find_package(CUDA REQUIRED)
+    add_definitions(-DUSE_CUDA)
+    set_source_files_properties(matrix_cuda.cu PROPERTIES LANGUAGE CUDA)
+    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -std=c++14")
+    include_directories(${CUDA_INCLUDE_DIRS})
+endif()
 
 file(GLOB SOURCES 
     "src/LinearAlgebra/*.cpp"
-    "cuda/*.cpp"
+    "cuda/*.cu"
     "*.cpp"
 )
 file(GLOB HEADERS 
     "src/LinearAlgebra/*.h"
-    "cuda/*.h"
+    "cuda/*.cuh"
     )
 
 add_library(MathCV SHARED ${SOURCES} ${HEADERS} MathCV_global.h)
@@ -24,6 +32,9 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
 )
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${CUDA_INCLUDE_DIRS})
+target_link_directories(${PROJECT_NAME} PRIVATE ${CUDA_LIBRARIES})
 
 option(${PROJECT_NAME}_BUILD_DOCUMENTATION "Create and install the HTML based API documentation (requires Doxygen)" OFF)
 if(${PROJECT_NAME}_BUILD_DOCUMENTATION)

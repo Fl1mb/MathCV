@@ -2,6 +2,7 @@
 #define MATHCV_H
 
 #include "MathCV_global.h"
+#include "src/LinearAlgebra/matrix.h"
 
 #ifndef __cplusplus
 extern "C"{
