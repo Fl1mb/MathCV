@@ -17,7 +17,7 @@ namespace MathCV
     public:
         static_assert(std::is_arithmetic<T>::value, 
                  "Matrix can only be instantiated with arithmetic types");
-    
+        Matrix():rows_(0), columns_(0), data_(nullptr){}
         Matrix(int rows, int cols);
         Matrix(const Matrix& other);
         Matrix(Matrix&& other) noexcept;
@@ -57,7 +57,7 @@ namespace MathCV
         static Result trace(const Matrix& matrix, double& tr);
 
     private:
-        Matrix() = default;
+        
     
         int size()const;
 
